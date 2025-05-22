@@ -1,10 +1,12 @@
 # Gerador de Etiquetas para Correios
 
+[README pt-BR](README.md) | [README english](README-en.md)
+
 ![Screenshot da aplicação que mostram as telas internas do sistema](./image.png 'Screenshot da aplicação')
 
 Este é um projeto de aprendizado sobre programação desktop com Java, interfaces gráficas em Java Swing, ersistência de dados com Hibernate, Internacionalização e Exportação de dados para PDF. O sistema não deve ser utilizado para fins comerciais ou em produção, servindo apenas como referência instrucional em disciplinas de cursos da área.
 
-## Instalação
+## Instalação para uso
 
 Realize o download da última versão disponível. É necessário o JDK 18+ para rodar a aplicação. O diretório de execução do projeto precisa ter o executável .jar e o diretório de arquivos de idiomas.
 
@@ -21,7 +23,7 @@ O projeto utiliza como gerenciador de dependência o Maven, sendo que a estrutur
 - DAO: classes que operam aspectos de banco de dados com as entidades;
 - entities: classes entidades do sistema (Model do MVC);
 - gui: classes de interfaces gráficas do sistema (Controller/View do MVC);
-- services: classe de serviços de terceiros do sistema, aqui reside atualmente a classe que gera o PDF;
+- services: classes de serviços de terceiros do sistema, aqui reside atualmente a classe que gera o PDF;
 - utilities: classes utilitárias para todos os demais componentes do sistema, pode conter gerador de dados de teste, configurações de banco de dados, etc.
 
 Após realizar o download para desenvolvimento, na raíz do projeto, renomeie o arquivo hibernate-exemplo.cfg.xml para hibernate.cfg.xml e informe as credenciais do seu banco de dados. A configuração atual irá criar o banco baseado nas classes entidades.
