@@ -182,9 +182,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 });
             }).start();
         });
-//        InternalPessoas internaPessoas = new InternalPessoas(this.traducoes);
-//        this.jDesktop.add(internaPessoas);
-//        internaPessoas.setVisible(true);
 
     }//GEN-LAST:event_jMenuItemPessoasActionPerformed
 
