@@ -25,7 +25,7 @@ import javax.swing.table.DefaultTableModel;
  * @author fabiosperotto
  */
 public class InternalPessoaEndereco extends javax.swing.JInternalFrame {
-
+    
     private JTable tbPessoas;
     private Pessoa pessoa;
     private int linhaTabelaAncestral;
@@ -89,7 +89,7 @@ public class InternalPessoaEndereco extends javax.swing.JInternalFrame {
         this.btnSalvarModificacoes.setText(this.traducoes.getString("cad_endereco_botao_salvar"));
         this.btnAdicionarLinha.setText(this.traducoes.getString("cad_endereco_botao_adicionar"));
         this.btnRemover.setText(this.traducoes.getString("cad_endereco_botao_remover"));
-   }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -319,9 +319,12 @@ public class InternalPessoaEndereco extends javax.swing.JInternalFrame {
                 endereco.setNumero(numeroRua);
                 EnderecoDAO.atualizar(endereco);
             }
-
+            
         }
-        JOptionPane.showMessageDialog(this, "Endereços atualizados/salvos com sucesso", "Endereços Pessoais", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(this,
+                this.traducoes.getString("cad_endereco_msg1_desc"),
+                this.traducoes.getString("cad_endereco_msg1_titulo"),
+                JOptionPane.INFORMATION_MESSAGE);
 
     }//GEN-LAST:event_btnSalvarModificacoesActionPerformed
 
@@ -352,9 +355,11 @@ public class InternalPessoaEndereco extends javax.swing.JInternalFrame {
      * @param evt evento de clique principal do mouse
      */
     private void btnRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverActionPerformed
-        int resposta = JOptionPane.showInternalConfirmDialog(this, "Tem certeza que deseja excluir?",
-                "Exclusão de Endereço", JOptionPane.YES_NO_OPTION);
-
+        int resposta = JOptionPane.showInternalConfirmDialog(this,
+                this.traducoes.getString("cad_pessoas_msg3_desc"),
+                this.traducoes.getString("cad_pessoas_msg3_titulo"),
+                JOptionPane.YES_NO_OPTION);
+        
         if (resposta == 0) {
             int numeroLinha = this.tbEnderecos.getSelectedRow();
             int id = Integer.parseInt(this.tbEnderecos.getValueAt(numeroLinha, 0).toString());
@@ -363,9 +368,15 @@ public class InternalPessoaEndereco extends javax.swing.JInternalFrame {
                 EnderecoDAO.excluir(endereco);
                 DefaultTableModel modelo = (DefaultTableModel) this.tbEnderecos.getModel();
                 modelo.removeRow(this.tbEnderecos.getSelectedRow());
-                JOptionPane.showInternalMessageDialog(this, "Registro excluído com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showInternalMessageDialog(this,
+                        this.traducoes.getString("cad_endereco_rem_ok_desc"),
+                        this.traducoes.getString("cad_endereco_rem_ok_titulo"),
+                        JOptionPane.INFORMATION_MESSAGE);
             } else {
-                JOptionPane.showInternalMessageDialog(this, "Não é possível excluir o endereço, uma mensagem foi enviado para o nosso suporte. Em caso de dúvidas entre em contato com suporte@correios.com", "Erro", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showInternalMessageDialog(this,
+                        this.traducoes.getString("cad_endereco_rem_error_desc"),
+                        this.traducoes.getString("cad_endereco_rem_error_titulo"),
+                        JOptionPane.ERROR_MESSAGE);
             }
         }
 
@@ -385,7 +396,10 @@ public class InternalPessoaEndereco extends javax.swing.JInternalFrame {
             }
         }
         if (!etiqueta.gerarPDFEndereco()) {
-            JOptionPane.showInternalMessageDialog(this, "Não é possível gerar etiquetas, uma mensagem foi enviado para o nosso suporte. Em caso de dúvidas entre em contato com suporte@correios.com", "Erro", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showInternalMessageDialog(this,
+                    this.traducoes.getString("cad_etiqueta_msg1_desc"),
+                    this.traducoes.getString("cad_etiqueta_msg1_titulo"),
+                    JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnGerarEtiquetaActionPerformed
 
