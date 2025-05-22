@@ -1,0 +1,24 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- conexão com mysql -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/nomebancoaqui?useSSL=false</property>
+        <property name="hibernate.connection.username">usuario_banco</property>
+        <property name="hibernate.connection.password">senha_banco</property>
+        <!-- exibir no console o SQL que foi aplicado no BD -->
+        <property name="hibernate.show_sql">true</property>
+        <!--exibe o SQL gerado, formatado em multiplas linhas e indentado-->
+        <property name="hibernate.format_sql">true</property>
+        <!--regra para geracao do BD: -->
+        <property name="hibernate.hbm2ddl.auto">create</property>
+        <!-- para configurar o escopo de sessao em nivel de thread: -->
+        <property name="hibernate.current_session_context_class">thread</property>
+        <!-- mapeamento das entidades (pode ser incluido quando implementar as classes -->
+        <mapping class="com.correios.entities.Pessoa"/>
+        <mapping class="com.correios.entities.Endereco"/>
+
+    </session-factory>
+</hibernate-configuration>
