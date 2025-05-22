@@ -311,6 +311,7 @@ public class InternalPessoaEndereco extends javax.swing.JInternalFrame {
                 novoEndereco = new Endereco(logradouro, numeroRua);
                 novoEndereco.setPessoa(this.pessoa);
                 EnderecoDAO.salvar(novoEndereco);
+                modelo.setValueAt(novoEndereco.getId(), i, 0);
             }
             if (!idModelo.equals("")) { //endereco que veio do banco
                 idEndereco = Integer.parseInt(idModelo); //fim da gambiarra do java pra converter de string pra int
