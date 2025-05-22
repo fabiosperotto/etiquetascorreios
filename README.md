@@ -18,10 +18,10 @@ Realize o download da última versão disponível. É necessário o JDK 18+ para
 
 O projeto utiliza como gerenciador de dependência o Maven, sendo que a estrutura de diretórios consta como:
 
-- DAO: classes que operam aspectos de banco de dados com as entidades
-- entities: classes entidades do sistema (Model do MVC)
-- gui: classes de interfaces gráficas do sistema (Controller/View do MVC)
-- services: classe de serviços de terceiros do sistema, aqui reside atualmente a classe que gera o PDF.
+- DAO: classes que operam aspectos de banco de dados com as entidades;
+- entities: classes entidades do sistema (Model do MVC);
+- gui: classes de interfaces gráficas do sistema (Controller/View do MVC);
+- services: classe de serviços de terceiros do sistema, aqui reside atualmente a classe que gera o PDF;
 - utilities: classes utilitárias para todos os demais componentes do sistema, pode conter gerador de dados de teste, configurações de banco de dados, etc.
 
 Após realizar o download para desenvolvimento, na raíz do projeto, renomeie o arquivo hibernate-exemplo.cfg.xml para hibernate.cfg.xml e informe as credenciais do seu banco de dados. A configuração atual irá criar o banco baseado nas classes entidades.
